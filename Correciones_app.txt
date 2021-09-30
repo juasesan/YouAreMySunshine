@@ -1,0 +1,16 @@
+Omitir funcionalidades que no se usen (regla para medir distancias)
+
+Mantener solo Renewable Energy en la sección de "User Community"
+
+Mantener solo la opción "Single Point"
+
+Temporal Average:
+	-Por hora
+	-Por día
+	-Por mes
+
+Parameter:
+	Solar Fluxes and Related: All Sky Surface Shortwave Downward Irradiance (por defecto, no se muestra)
+	Temperatura
+	Viento
+	Humedad
