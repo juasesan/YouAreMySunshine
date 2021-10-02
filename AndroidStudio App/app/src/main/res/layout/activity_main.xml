@@ -14,7 +14,7 @@
         app:srcCompat="@drawable/mapa" />
 
     <FrameLayout
-        android:id="@+id/container"
+        android:id="@+id/container_2"
         android:layout_width="350dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"

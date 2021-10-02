@@ -3,26 +3,17 @@ package com.example.spaceapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.Toast;
-
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SegundoFragmento#newInstance} factory method to
+ * Use the {@link TemporalAverage#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SegundoFragmento extends BottomSheetDialogFragment {
-
-    private Button bt_prueba;
+public class TemporalAverage extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,7 +24,7 @@ public class SegundoFragmento extends BottomSheetDialogFragment {
     private String mParam1;
     private String mParam2;
 
-    public SegundoFragmento() {
+    public TemporalAverage() {
         // Required empty public constructor
     }
 
@@ -43,11 +34,11 @@ public class SegundoFragmento extends BottomSheetDialogFragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SegundoFragmento.
+     * @return A new instance of fragment TemporalAverage.
      */
     // TODO: Rename and change types and number of parameters
-    public static SegundoFragmento newInstance(String param1, String param2) {
-        SegundoFragmento fragment = new SegundoFragmento();
+    public static TemporalAverage newInstance(String param1, String param2) {
+        TemporalAverage fragment = new TemporalAverage();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -68,19 +59,6 @@ public class SegundoFragmento extends BottomSheetDialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_segundo_fragmento, container, false);
-
-        bt_prueba = view.findViewById(R.id.prueba);
-        bt_prueba.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.container_2, new TemporalAverage());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-                Toast.makeText(getActivity(), "Probando...", Toast.LENGTH_SHORT).show();
-            }
-        });
-        return view;
+        return inflater.inflate(R.layout.fragment_temporal_average, container, false);
     }
 }

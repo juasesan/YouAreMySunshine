@@ -6,8 +6,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomSheet = findViewById(R.id.container);
+        bottomSheet = findViewById(R.id.container_2);
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
         //bottomSheetBehavior.setPeekHeight(450);
 
@@ -44,12 +42,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Constraint Layout
         icons = findViewById(R.id.icons);
 
+        /*//Button
+        bt_prueba = findViewById(R.id.prueba);
+        bt_prueba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Probando...", Toast.LENGTH_SHORT).show();
+            }
+        });*/
+
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId()==R.id.lupa){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, new PrimerFragmento()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_2, new PrimerFragmento()).commit();
             //if (bottomSheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED){
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
             //}
@@ -71,12 +78,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             bottomSheetDialog.setContentView(bottomSheetView);
             bottomSheetDialog.show();*/
         }else if (v.getId()==R.id.satellite){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, new SegundoFragmento()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_2, new SegundoFragmento()).commit();
             //if (bottomSheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED){
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
             //}
         }else if (v.getId()==R.id.window){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, new TercerFragmento()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_2, new TercerFragmento()).commit();
             //if (bottomSheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED){
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
             //}
